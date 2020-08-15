@@ -21,6 +21,43 @@ var settings = new JsonSerializerSettings
             
         }
 
+        [Fact]
+        public void CanUpdateBlock() {
+            var blocks = new Chain<MyData> (new ProofOfWork());
+            blocks.AddBlock (new MyData (108, "Message - 108"));
+            blocks.AddBlock (new MyData (109, "Message - 109"));
+            blocks.AddBlock (new MyData (110, "Message - 110"));
+
+        Assert.True(blocks.IsValid());
+        Assert.Equal(3,blocks.Blocks.Count);
+
+        blocks.UpdateBlock(1,new MyData (1099, "Message - 1099"));
+
+        Assert.True(blocks.IsValid());
+        Assert.Equal(3,blocks.Blocks.Count);
+        Assert.Equal("Message - 1099",blocks[1].Data.Value.Message); 
+
+        }
+
+
+        [Fact]
+        public void CanRemoveBlock() {
+            var blocks = new Chain<MyData> (new ProofOfWork());
+            blocks.AddBlock (new MyData (108, "Message - 108"));
+            blocks.AddBlock (new MyData (109, "Message - 109"));
+            blocks.AddBlock (new MyData (110, "Message - 110"));
+
+        Assert.True(blocks.IsValid());
+        Assert.Equal(3,blocks.Blocks.Count);
+
+        blocks.RemoveBlock(1);
+
+        Assert.True(blocks.IsValid());
+        Assert.Equal(2,blocks.Blocks.Count);
+
+
+        }
+
 
         [Fact]
         public void ChainIsInvalidatedAfterChange () {

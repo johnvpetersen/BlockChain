@@ -49,6 +49,44 @@ namespace BlockChain {
             );
         }
 
+        
+
+       public void UpdateBlock(int index, T data) {
+            if (_blockChain.Count == 0)
+               return;
+
+            var newBlockChain = new Dictionary<int, Block<T>>();
+
+            foreach (var block in _blockChain)
+            {
+              var newData = block.Key == index ? data : block.Value.Data.Value;
+              var previousHash = newBlockChain.Count ==0 ? string.Empty : newBlockChain[newBlockChain.Count-1].Hash;
+               newBlockChain.Add(newBlockChain.Count,new Block<T>(newData,previousHash));
+            }
+
+            _blockChain = newBlockChain;
+
+
+       }
+
+        public void RemoveBlock(int index) {
+            if (_blockChain.Count == 0)
+               return;
+
+            var newBlockChain = new Dictionary<int, Block<T>>();
+
+            foreach (var block in _blockChain)
+            {
+               if (block.Key == index)
+                  continue;
+
+               var previousHash = newBlockChain.Count ==0 ? string.Empty : newBlockChain[newBlockChain.Count-1].Hash;
+               newBlockChain.Add(newBlockChain.Count,new Block<T>(block.Value.Data.Value,previousHash));
+            }
+
+            _blockChain = newBlockChain;
+        }
+        
         public void AddBlock (T data) {
 
             var previousHash =
@@ -63,7 +101,6 @@ namespace BlockChain {
                     _proofOfWork)
             );
         }
-
         public Block<T> this [int i] => _blockChain[i];
 
     }
