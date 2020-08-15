@@ -1,0 +1,24 @@
+{
+  "autorun": true,
+  "terminals": [
+    {
+      "name": "root", 
+      "description": "Project root directory", 
+      "icon": "code", 
+      "cwd": "../blockchain"
+    },
+    {
+      "name": "App", 
+      "description": "App", 
+      "icon": "code", 
+      "cwd": "../blockchain/App"
+    },
+
+    {
+      "name": "Tests", 
+      "description": "Tests", 
+      "icon": "code", 
+      "cwd": "../blockchain/Tests"
+    } 
+  ]
+}
