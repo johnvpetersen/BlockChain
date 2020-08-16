@@ -11,8 +11,12 @@
 !.vscode/extensions.json
 *.code-workspace
 
-bin/*
-obj/*
+App/bin
+Tests/bin
+App/obj
+Tests/obj
+
+
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
