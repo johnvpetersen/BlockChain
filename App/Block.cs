@@ -12,7 +12,7 @@ namespace BlockChain
         private Data<T> _data;
         private string _prefix;
 
-        public string Prefix => _prefix;
+//        public string Prefix => _prefix;
 
 
         [JsonConstructor]

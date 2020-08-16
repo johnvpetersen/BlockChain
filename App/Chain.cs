@@ -44,7 +44,7 @@ namespace BlockChain {
             return SerializeObject (
                 new {
                     BlockChain = _blockChain,
-                        ProofOfWork = prefix
+                    ProofOfWork = prefix
                 }
             );
         }
@@ -61,7 +61,7 @@ namespace BlockChain {
             {
               var newData = block.Key == index ? data : block.Value.Data.Value;
               var previousHash = newBlockChain.Count ==0 ? string.Empty : newBlockChain[newBlockChain.Count-1].Hash;
-               newBlockChain.Add(newBlockChain.Count,new Block<T>(newData,previousHash));
+               newBlockChain.Add(newBlockChain.Count,new Block<T>(newData,previousHash,_proofOfWork));
             }
 
             _blockChain = newBlockChain;
@@ -81,7 +81,7 @@ namespace BlockChain {
                   continue;
 
                var previousHash = newBlockChain.Count ==0 ? string.Empty : newBlockChain[newBlockChain.Count-1].Hash;
-               newBlockChain.Add(newBlockChain.Count,new Block<T>(block.Value.Data.Value,previousHash));
+               newBlockChain.Add(newBlockChain.Count,new Block<T>(block.Value.Data.Value,previousHash, _proofOfWork));
             }
 
             _blockChain = newBlockChain;
