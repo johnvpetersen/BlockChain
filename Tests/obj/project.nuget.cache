@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qZLTVfUOZ8e1Y77hMCHLjT1pAOfgjymNYbsTfK4hQVWqCqdw81yrdlMl94FGRGmpsS9mHCygOao1Qoe0TpDT9A==",
+  "dgSpecHash": "R91fJkURun8Rmcs26Ynzrw8Vk65Zy4kdl38FccM0ddxsccJdytOSSDgs8D/IVCX3lmT7DQAmsOIIH260zfdEtA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\johnv\\source\\repos\\blockchain\\tests\\Tests.csproj",
+  "projectFilePath": "c:\\Users\\johnv\\source\\repos\\BlockChain\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\johnv\\.nuget\\packages\\coverlet.collector\\1.0.1\\coverlet.collector.1.0.1.nupkg.sha512",
     "C:\\Users\\johnv\\.nuget\\packages\\microsoft.codecoverage\\16.2.0\\microsoft.codecoverage.16.2.0.nupkg.sha512",
