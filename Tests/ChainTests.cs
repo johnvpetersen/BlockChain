@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using BlockChain;
 using Newtonsoft.Json;
 using Xunit;
+using System.Linq;
 using static Newtonsoft.Json.JsonConvert;
 namespace Tests
 {
@@ -10,16 +11,24 @@ namespace Tests
     public class ChainTests {
 
 
-        public ChainTests() {
 
-var settings = new JsonSerializerSettings
-            {
-                Converters = null
-            };
-
-
+        [Fact]
+        public void CanFindBlock() {
+            var blocks = new Chain<MyData> (new ProofOfWork());
+            blocks.AddBlock (new MyData (108, "Message - 108"));
+            blocks.AddBlock (new MyData (109, "Message - 109"));
+            blocks.AddBlock (new MyData (110, "Message - 110"));
             
+            Assert.True(blocks.IsValid());
+
+            var block0 = blocks.Blocks.First(x => x.Value.Data.Value.Message == "Message - 108");
+
+            Assert.Equal("Message - 108", block0.Value.Data.Value.Message);
+
+
+
         }
+
 
         [Fact]
         public void CanUpdateBlock() {
@@ -36,6 +45,8 @@ var settings = new JsonSerializerSettings
         Assert.True(blocks.IsValid());
         Assert.Equal(3,blocks.Blocks.Count);
         Assert.Equal("Message - 1099",blocks[1].Data.Value.Message); 
+
+        Console.WriteLine(blocks.ToString());
 
         }
 
