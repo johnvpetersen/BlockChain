@@ -11,11 +11,8 @@
 !.vscode/extensions.json
 *.code-workspace
 
-App/bin
-Tests/bin
-App/obj
-Tests/obj
-
+bin
+obj
 
 
 ### VisualStudioCode Patch ###

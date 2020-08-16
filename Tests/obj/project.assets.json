@@ -6339,11 +6339,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\johnv\\source\\repos\\BlockChain\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Users\\johnv\\source\\repos\\BlockChain\\tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "c:\\Users\\johnv\\source\\repos\\BlockChain\\Tests\\Tests.csproj",
+      "projectPath": "C:\\Users\\johnv\\source\\repos\\BlockChain\\tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\johnv\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\johnv\\source\\repos\\BlockChain\\Tests\\obj\\",
+      "outputPath": "C:\\Users\\johnv\\source\\repos\\BlockChain\\tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6363,8 +6363,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj": {
-              "projectPath": "c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj"
+            "C:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj": {
+              "projectPath": "C:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj"
             }
           }
         }
