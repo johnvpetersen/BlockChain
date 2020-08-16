@@ -432,11 +432,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj",
+      "projectUniqueName": "C:\\Users\\johnv\\source\\repos\\blockchain\\App\\App.csproj",
       "projectName": "App",
-      "projectPath": "c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj",
+      "projectPath": "C:\\Users\\johnv\\source\\repos\\blockchain\\App\\App.csproj",
       "packagesPath": "C:\\Users\\johnv\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\obj\\",
+      "outputPath": "C:\\Users\\johnv\\source\\repos\\blockchain\\App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -495,13 +495,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
