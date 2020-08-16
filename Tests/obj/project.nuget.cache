@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "siP7smVf6U2DGzRIOXKAgow28TXX/I+iRTknNIs3zptR66+jwKUB+8tU5fPaa+Ehhei6uhVivhq0sqDLPXU29A==",
+  "dgSpecHash": "R91fJkURun8Rmcs26Ynzrw8Vk65Zy4kdl38FccM0ddxsccJdytOSSDgs8D/IVCX3lmT7DQAmsOIIH260zfdEtA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\johnv\\source\\repos\\blockchain\\Tests\\Tests.csproj",
+  "projectFilePath": "c:\\Users\\johnv\\source\\repos\\BlockChain\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\johnv\\.nuget\\packages\\coverlet.collector\\1.0.1\\coverlet.collector.1.0.1.nupkg.sha512",
     "C:\\Users\\johnv\\.nuget\\packages\\microsoft.codecoverage\\16.2.0\\microsoft.codecoverage.16.2.0.nupkg.sha512",
@@ -102,5 +102,12 @@
     "C:\\Users\\johnv\\.nuget\\packages\\xunit.extensibility.execution\\2.4.0\\xunit.extensibility.execution.2.4.0.nupkg.sha512",
     "C:\\Users\\johnv\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.0\\xunit.runner.visualstudio.2.4.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file c:\\Users\\johnv\\source\\repos\\BlockChain\\Tests\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

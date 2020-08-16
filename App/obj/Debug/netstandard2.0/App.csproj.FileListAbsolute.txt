@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\johnv\source\repos\blockchain\App\bin\Debug\netstandard2.0\App.deps.json
 C:\Users\johnv\source\repos\blockchain\App\bin\Debug\netstandard2.0\App.dll
 C:\Users\johnv\source\repos\blockchain\App\bin\Debug\netstandard2.0\App.pdb
@@ -7,3 +8,14 @@ C:\Users\johnv\source\repos\blockchain\App\obj\Debug\netstandard2.0\App.Assembly
 C:\Users\johnv\source\repos\blockchain\App\obj\Debug\netstandard2.0\App.csproj.CoreCompileInputs.cache
 C:\Users\johnv\source\repos\blockchain\App\obj\Debug\netstandard2.0\App.dll
 C:\Users\johnv\source\repos\blockchain\App\obj\Debug\netstandard2.0\App.pdb
+=======
+C:\Users\johnv\source\repos\blockchain\app\bin\Debug\netstandard2.0\App.deps.json
+C:\Users\johnv\source\repos\blockchain\app\bin\Debug\netstandard2.0\App.dll
+C:\Users\johnv\source\repos\blockchain\app\bin\Debug\netstandard2.0\App.pdb
+C:\Users\johnv\source\repos\blockchain\app\obj\Debug\netstandard2.0\App.csprojAssemblyReference.cache
+C:\Users\johnv\source\repos\blockchain\app\obj\Debug\netstandard2.0\App.csproj.CoreCompileInputs.cache
+C:\Users\johnv\source\repos\blockchain\app\obj\Debug\netstandard2.0\App.AssemblyInfoInputs.cache
+C:\Users\johnv\source\repos\blockchain\app\obj\Debug\netstandard2.0\App.AssemblyInfo.cs
+C:\Users\johnv\source\repos\blockchain\app\obj\Debug\netstandard2.0\App.dll
+C:\Users\johnv\source\repos\blockchain\app\obj\Debug\netstandard2.0\App.pdb
+>>>>>>> master
