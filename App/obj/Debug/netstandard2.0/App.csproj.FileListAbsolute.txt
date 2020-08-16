@@ -1,8 +1,0 @@
-c:\Users\jpetersen\source\repos\BlockChain\App\bin\Debug\netstandard2.0\App.deps.json
-c:\Users\jpetersen\source\repos\BlockChain\App\bin\Debug\netstandard2.0\App.dll
-c:\Users\jpetersen\source\repos\BlockChain\App\bin\Debug\netstandard2.0\App.pdb
-c:\Users\jpetersen\source\repos\BlockChain\App\obj\Debug\netstandard2.0\App.csprojAssemblyReference.cache
-c:\Users\jpetersen\source\repos\BlockChain\App\obj\Debug\netstandard2.0\App.AssemblyInfoInputs.cache
-c:\Users\jpetersen\source\repos\BlockChain\App\obj\Debug\netstandard2.0\App.AssemblyInfo.cs
-c:\Users\jpetersen\source\repos\BlockChain\App\obj\Debug\netstandard2.0\App.dll
-c:\Users\jpetersen\source\repos\BlockChain\App\obj\Debug\netstandard2.0\App.pdb
