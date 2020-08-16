@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj": {}
+    "C:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj": {}
   },
   "projects": {
-    "c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj": {
+    "C:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj",
+        "projectUniqueName": "C:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj",
         "projectName": "App",
-        "projectPath": "c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj",
+        "projectPath": "C:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj",
         "packagesPath": "C:\\Users\\johnv\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\obj\\",
+        "outputPath": "C:\\Users\\johnv\\source\\repos\\BlockChain\\App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

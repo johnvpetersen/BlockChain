@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G6CVz6yU443VEHpkWENL0agAXqACPK66n3hnmINZG2bP9WGV3ZrE1T4Ja0G5GqRP08igF+SSlew9DLboEHrHYQ==",
+  "dgSpecHash": "mwP8CbHfEepEx4Z83W75mdKrg3d9Qq/wmgj1bWIrOOoOU/poE831414iJBeu0zeBVf74RPkRIiX18QE/GtfqGA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj",
+  "projectFilePath": "C:\\Users\\johnv\\source\\repos\\BlockChain\\App\\App.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
