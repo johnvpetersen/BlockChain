@@ -8,6 +8,29 @@ namespace Tests
 {
     public class BlockTests {
 
+
+       [Fact]
+       public void CanInstantiateData() {
+           var sut = new Data<MyData>(0,new MyData(10,"Amount is $10.00"));
+           Assert.Equal(10,sut.Value.Amount);
+           Assert.Equal("Amount is $10.00", sut.Value.Message);
+           Assert.Equal(0,sut.Nonce);
+           Assert.True(string.IsNullOrEmpty(sut.PreviousHash));
+
+           var expectedJSON = 
+              @"{"Nonce":0,
+                 "Value":{"Amount":10,"Message":"Amount is $10.00"},
+                 "PreviousHash":""}"; 
+        
+            Assert.Equal(expectedJSON, sut.ToString());
+
+       }
+
+
+
+
+
+
         [Fact]
         public void BlockIsInvalidatedAfterChange () {
             var sut = new BlockChain.Block<MyData> (
