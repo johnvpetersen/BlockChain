@@ -12,9 +12,6 @@ namespace BlockChain
         private Data<T> _data;
         private string _prefix;
 
-//        public string Prefix => _prefix;
-
-
         [JsonConstructor]
         public Block (string hash, Data<T> data,string prefix) {
             _hash = hash;
