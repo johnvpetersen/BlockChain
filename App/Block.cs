@@ -12,9 +12,6 @@ namespace BlockChain
         private Data<T> _data;
         private string _prefix;
 
-//        public string Prefix => _prefix;
-
-
         [JsonConstructor]
         public Block (string hash, Data<T> data,string prefix) {
             _hash = hash;
@@ -27,15 +24,8 @@ namespace BlockChain
             var rnd = new Random ();
             while (true) {
                 var blockData = new Data<T> (rnd.Next (), data, previousHash);
-                var result = Convert.ToBase64String (
-                    SHA256.Create ()
-                    .ComputeHash (
-                        Encoding.UTF8.GetBytes (
-                            SerializeObject (blockData)
-                        )
-                    )
-                );
-
+                var result = computeHash(blockData);
+ 
                 if (string.IsNullOrEmpty (_prefix) ||
                     result.Substring (0, _prefix.Length) == _prefix) {
                     _hash = result;

@@ -31,46 +31,6 @@ namespace Tests
 
 
         [Fact]
-        public void CanUpdateBlock() {
-            var blocks = new Chain<MyData> (new ProofOfWork());
-            blocks.AddBlock (new MyData (108, "Message - 108"));
-            blocks.AddBlock (new MyData (109, "Message - 109"));
-            blocks.AddBlock (new MyData (110, "Message - 110"));
-
-        Assert.True(blocks.IsValid());
-        Assert.Equal(3,blocks.Blocks.Count);
-
-        blocks.UpdateBlock(1,new MyData (1099, "Message - 1099"));
-
-        Assert.True(blocks.IsValid());
-        Assert.Equal(3,blocks.Blocks.Count);
-        Assert.Equal("Message - 1099",blocks[1].Data.Value.Message); 
-
-        Console.WriteLine(blocks.ToString());
-
-        }
-
-
-        [Fact]
-        public void CanRemoveBlock() {
-            var blocks = new Chain<MyData> (new ProofOfWork());
-            blocks.AddBlock (new MyData (108, "Message - 108"));
-            blocks.AddBlock (new MyData (109, "Message - 109"));
-            blocks.AddBlock (new MyData (110, "Message - 110"));
-
-        Assert.True(blocks.IsValid());
-        Assert.Equal(3,blocks.Blocks.Count);
-
-        blocks.RemoveBlock(1);
-
-        Assert.True(blocks.IsValid());
-        Assert.Equal(2,blocks.Blocks.Count);
-
-
-        }
-
-
-        [Fact]
         public void ChainIsInvalidatedAfterChange () {
 
             var blocks = new Chain<MyData> (new ProofOfWork());
@@ -102,25 +62,27 @@ namespace Tests
         [Theory]
         [InlineData(true)]
         [InlineData(false)]
-
         public void ChainCanBeSerializedAndDeSerialized (bool proofOfWork) {
-
-        
-
             var blocks = new Chain<MyData> (proofOfWork ? new ProofOfWork() : null);
-            blocks.AddBlock (new MyData (108, "Message - 108"));
-            blocks.AddBlock (new MyData (109, "Message - 109"));
-            blocks.AddBlock (new MyData (110, "Message - 110"));
+            blocks.AddBlock (new MyData (108, "Amount is 108"));
+            blocks.AddBlock (new MyData (109, "Amount is 109"));
+            blocks.AddBlock (new MyData (110, "Amount is 110"));
+
+            Assert.True (blocks.IsValid ());
 
             var blockJSON = blocks.ToString ();
+
+            blocks = null;
 
             blocks = DeserializeObject<Chain<MyData>> (blockJSON, new ProofOfWorkConverter());
 
             Assert.True (blocks.IsValid ());
+            Assert.Equal(blockJSON, blocks.ToString());
 
+            blocks.AddBlock (new MyData (111, "Amount is 111"));
 
+            Assert.Equal(4,blocks.Blocks.Count);
         }
-
     }
 
 
