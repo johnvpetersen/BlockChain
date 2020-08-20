@@ -16,14 +16,6 @@ namespace Tests
            Assert.Equal("Amount is $10.00", sut.Value.Message);
            Assert.Equal(0,sut.Nonce);
            Assert.True(string.IsNullOrEmpty(sut.PreviousHash));
-
-           var expectedJSON = 
-              @"{"Nonce":0,
-                 "Value":{"Amount":10,"Message":"Amount is $10.00"},
-                 "PreviousHash":""}"; 
-        
-            Assert.Equal(expectedJSON, sut.ToString());
-
        }
 
 
