@@ -37,8 +37,11 @@ namespace BlockChain
         string computeHash () => computeHash (_data);
 
         string computeHash (Data<T> data) {
+
+
+        using (var sha256 = SHA256.Create()) {
             return Convert.ToBase64String (
-                SHA256.Create ()
+                sha256
                 .ComputeHash (
                     Encoding.UTF8.GetBytes (
                         SerializeObject (
@@ -47,6 +50,10 @@ namespace BlockChain
                     )
                 )
             );
+        
+        }
+
+
         }
         public override string ToString () {
             return SerializeObject (this);
