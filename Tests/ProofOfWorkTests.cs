@@ -1,44 +1,42 @@
 using System;
-using BlockChain;
 using Xunit;
 
-namespace Tests {
-
-    public class ProofOfWorkTests {
-
+namespace Tests
+{
+    public class ProofOfWorkTests
+    {
         [Fact]
-        public void CanVerifyPrefixWithOutAnyParameter () {
-            var sut = new ProofOfWork ();
-            System.Console.WriteLine ($"Prefix: {sut.GetPrefix()}");
-            Assert.Equal (1, sut.GetPrefix ().Length);
-
+        public void CanVerifyPrefixWithOutAnyParameter()
+        {
+            var proofOfWork = new ProofOfWork();
+            Console.WriteLine($"Prefix: {proofOfWork.GetPrefix()}");
+            Assert.Equal(1, proofOfWork.GetPrefix().Length);
         }
 
         [Fact]
-        public void CanVerifyPrefixWithOutIntArrayParameter () {
-            var sut = new ProofOfWork (Guid.NewGuid (), null);
-            System.Console.WriteLine ($"Prefix: {sut.GetPrefix()}");
-            Assert.True (string.IsNullOrEmpty (sut.GetPrefix ()));
-
+        public void CanVerifyPrefixWithOutIntArrayParameter()
+        {
+            var proofOfWork = new ProofOfWork(Guid.NewGuid(), null);
+            Console.WriteLine($"Prefix: {proofOfWork.GetPrefix()}");
+            Assert.True(string.IsNullOrEmpty(proofOfWork.GetPrefix()));
         }
 
         [Fact]
-        public void CanVerifyPrefixWithParameters () {
-            var guid = Guid.NewGuid ();
+        public void CanVerifyPrefixWithParameters()
+        {
+            var guid = Guid.NewGuid();
             int[] charsToTake = { 0, 5, 10 };
-            var expected = string.Empty;
+            var proofOfWork = new ProofOfWork(guid, charsToTake);
+            var expectedPrefix = string.Empty;
 
-            var sut = new ProofOfWork (guid, charsToTake);
-
-            Array.ForEach (charsToTake, element => {
-                expected += guid.ToString ().Substring (element, 1);
+            Array.ForEach(charsToTake, element =>
+            {
+                expectedPrefix += guid.ToString().Substring(element, 1);
             });
 
-            Assert.Equal (expected, sut.GetPrefix ());
+            Assert.Equal(expectedPrefix, proofOfWork.GetPrefix());
 
-            System.Console.WriteLine ($"Prefix: {sut.GetPrefix()}");
-
+            Console.WriteLine($"Prefix: {proofOfWork.GetPrefix()}");
         }
     }
-
 }

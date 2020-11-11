@@ -4,84 +4,82 @@ using BlockChain;
 using Newtonsoft.Json;
 using Xunit;
 using System.Linq;
-using static Newtonsoft.Json.JsonConvert;
+
 namespace Tests
 {
 
-    public class ChainTests {
-
-
-
+    public class ChainTests
+    {
         [Fact]
-        public void CanFindBlock() {
-            var blocks = new Chain<MyData> (new ProofOfWork());
-            blocks.AddBlock (new MyData (108, "Message - 108"));
-            blocks.AddBlock (new MyData (109, "Message - 109"));
-            blocks.AddBlock (new MyData (110, "Message - 110"));
-            
-            Assert.True(blocks.IsValid());
+        public void CanFindBlock()
+        {
+            var chain = new Chain<SampleData>(new ProofOfWork());
+            chain.AddBlock(new SampleData(108, "Message - 108"));
+            chain.AddBlock(new SampleData(109, "Message - 109"));
+            chain.AddBlock(new SampleData(110, "Message - 110"));
 
-            var block0 = blocks.Blocks.First(x => x.Value.Data.Value.Message == "Message - 108");
+            Assert.True(chain.IsValid());
+
+            var block0 = chain.Blocks.First(x => x.Value.Data.Value.Message == "Message - 108");
 
             Assert.Equal("Message - 108", block0.Value.Data.Value.Message);
-
-
-
         }
 
 
         [Fact]
-        public void ChainIsInvalidatedAfterChange () {
+        public void ChainIsInvalidatedAfterChange()
+        {
 
-            var blocks = new Chain<MyData> (new ProofOfWork());
-            blocks.AddBlock (new MyData (108, "Message - 108"));
-            blocks.AddBlock (new MyData (109, "Message - 109"));
+            var chain = new Chain<SampleData>(new ProofOfWork());
+            chain.AddBlock(new SampleData(108, "Message - 108"));
+            chain.AddBlock(new SampleData(109, "Message - 109"));
 
-            var blockJSON = 
-               blocks.ToString ().Replace ("Message - 108", "CHANGED");
+            var blockJson =
+               chain.ToString().Replace("Message - 108", "CHANGED");
 
-            blocks = DeserializeObject<Chain<MyData>> (blockJSON, new ProofOfWorkConverter());
+            chain = JsonConvert.DeserializeObject<Chain<SampleData>>(blockJson, new ProofOfWorkConverter());
 
-            Assert.False (blocks.IsValid ());
+            Assert.False(chain.IsValid());
         }
 
         [Fact]
-        public void IsValidIsNullWhenChainDoesNotExist () {
-            var sut = new Chain<object> ();
-            Assert.True (sut.IsValid () == null);
+        public void IsValidIsNullWhenChainHasNoBlocks()
+        {
+            var chain = new Chain<object>();
+            Assert.True(chain.IsValid() == null);
         }
 
         [Fact]
-        public void IsValidIsNotNullWhenChainExists () {
-            var sut = new Chain<object> ();
-            sut.AddBlock (new MyData (108, "Message - 108"));
+        public void IsValidIsNotNullWhenChainHasBlock()
+        {
+            var chain = new Chain<object>();
+            chain.AddBlock(new SampleData(108, "Message - 108"));
 
-            Assert.True (sut.IsValid () != null);
+            Assert.True(chain.IsValid() != null);
         }
 
         [Theory]
         [InlineData(true)]
         [InlineData(false)]
-        public void ChainCanBeSerializedAndDeSerialized (bool proofOfWork) {
-            var blocks = new Chain<MyData> (proofOfWork ? new ProofOfWork() : null);
-            blocks.AddBlock (new MyData (108, "Amount is 108"));
-            blocks.AddBlock (new MyData (109, "Amount is 109"));
-            blocks.AddBlock (new MyData (110, "Amount is 110"));
+        public void ChainCanBeSerializedAndDeSerialized(bool proofOfWork)
+        {
+            var chain = new Chain<SampleData>(proofOfWork ? new ProofOfWork() : null);
+            chain.AddBlock(new SampleData(108, "Amount is 108"));
+            chain.AddBlock(new SampleData(109, "Amount is 109"));
+            chain.AddBlock(new SampleData(110, "Amount is 110"));
 
-            Assert.True (blocks.IsValid ());
+            Assert.True(chain.IsValid());
 
-            var blockJSON = blocks.ToString ();
+            var blockJson = chain.ToString();
 
-            blocks = null;
+            chain = JsonConvert.DeserializeObject<Chain<SampleData>>(blockJson, new ProofOfWorkConverter());
 
-            blocks = DeserializeObject<Chain<MyData>> (blockJSON, new ProofOfWorkConverter());
+            Assert.True(chain.IsValid());
+            Assert.Equal(blockJson, chain.ToString());
 
-            Assert.True (blocks.IsValid ());
-            Assert.Equal(blockJSON, blocks.ToString());
+            chain.AddBlock(new SampleData(111, "Amount is 111"));
 
-            blocks.AddBlock (new MyData (111, "Amount is 111"));
-
-            Assert.Equal(4,blocks.Blocks.Count);
+            Assert.Equal(4, chain.Blocks.Count);
         }
     }
 
@@ -98,21 +96,4 @@ namespace Tests
             throw new NotImplementedException();
         }
     }
-
-
-    public class MyData {
-
-        private int _amount;
-        private string _message;
-
-        [JsonConstructor]
-        public MyData (int amount, string message) {
-            _amount = amount;
-            _message = message;
-        }
-
-        public int Amount => _amount;
-        public string Message => _message;
-    }
-
 }
