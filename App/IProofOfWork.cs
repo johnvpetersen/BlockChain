@@ -1,5 +1,7 @@
-namespace BlockChain {
-      public interface IProofOfWork {
+namespace BlockChain
+{
+    public interface IProofOfWork
+    {
         string GetPrefix();
     }
 }
